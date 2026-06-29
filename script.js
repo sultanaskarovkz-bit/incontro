@@ -1,4 +1,4 @@
-/* ============ INCONTRO — site interactions ============ */
+/* ============ INCONTRO - site interactions ============ */
 // Graceful degradation: if any script error occurs, ensure all content is visible.
 window.addEventListener('error', function () {
   try { document.documentElement.classList.remove('js'); } catch (e) {}
@@ -212,7 +212,7 @@ window.addEventListener('error', function () {
     { y: 2022, t: "ICF · Certificate ACTP", c: "Коучинг", f: "2022. Certificate of Completion ACTP.pdf" },
     { y: 2022, t: "ICF · Certificate ACSTH", c: "Коучинг", f: "2022. Certificate of Completion ACSTH.pdf" },
     { y: 2022, t: "Coaching", c: "Коучинг", f: "2022. Certificate - Coaching.pdf" },
-    { y: 2021, t: "Scotwork — переговоры", c: "Переговоры", f: "2021. Scotwork.pdf" },
+    { y: 2021, t: "Scotwork - переговоры", c: "Переговоры", f: "2021. Scotwork.pdf" },
     { y: 2021, t: "Szkoła Negocjacji", c: "Переговоры", f: "2021. Szkola Negocjacji.pdf" },
     { y: 2021, t: "Профайлер-верификатор", c: "Профайлинг", f: "2021. Профайлер-Верификатор.pdf" },
     { y: 2019, t: "Профайлер-верификатор. Мастерский курс", c: "Профайлинг", f: "2019. Профайлер-Верификатор - Мастерский курс.pdf" },

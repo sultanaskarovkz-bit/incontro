@@ -191,7 +191,7 @@ h1,h2,h3,h4,.brand__mark,.preloader__mark{font-family:"Cormorant Garamond",Georg
 .about__edu{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:28px 0 30px}
 .edu h4{font-size:16px;color:var(--gold-d);margin-bottom:12px;text-transform:uppercase;letter-spacing:1.2px;font-family:"Manrope";font-weight:700}
 .edu li{position:relative;padding-left:20px;margin-bottom:8px;font-size:15px;color:var(--muted-d)}
-.edu li::before{content:"—";position:absolute;left:0;color:var(--gold)}
+.edu li::before{content:"-";position:absolute;left:0;color:var(--gold)}
 
 /* ===================== Approach ===================== */
 .approach__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:clamp(36px,5vw,60px)}
@@ -377,7 +377,7 @@ h1,h2,h3,h4,.brand__mark,.preloader__mark{font-family:"Cormorant Garamond",Georg
 }
 
 /* =====================================================================
-   ENHANCEMENTS v2 — offer, video, instagram, modal, visual polish
+   ENHANCEMENTS v2 - offer, video, instagram, modal, visual polish
    ===================================================================== */
 
 /* ---- Ambient glow in dark sections (content stays above) ---- */
