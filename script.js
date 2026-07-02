@@ -197,7 +197,7 @@ window.addEventListener('error', function () {
     { y: 2024, t: "Работа в терапии с детским эго-состоянием клиента с учётом циклов развития Памелы Левин", c: "Психотерапия", f: "2024. Работа в терапии с детским эго-состоянием клиента с учётом циклов развития Памелы Левин.pdf" },
     { y: 2024, t: "Сексология", c: "Сексология", f: "2024. Сексология.pdf" },
     { y: 2024, t: "Симбиоз 2.0", c: "Психотерапия", f: "2024. Симбиоз 2.0.pdf" },
-    { y: 2024, t: "Транзактный анализ в консультировании клиентов - Базовый уровень", c: "Психотерапия", f: "2024. Транзактный анализ в консультировании клиентов - Базовый уровень.pdf" },
+    { y: 2024, t: "Транзактный Анализ в консультировании клиентов - Базовый уровень", c: "Психотерапия", f: "2024. Транзактный анализ в консультировании клиентов - Базовый уровень.pdf" },
     { y: 2024, t: "Эмоциональная регуляция в психотерапии", c: "Психотерапия", f: "2024. Эмоциональная регуляция в психотерапии.pdf" },
     { y: 2023, t: "NLP-Практик", c: "НЛП", f: "2023. NLP-Практик.pdf" },
     { y: 2023, t: "NLP-Практик - удостоверение", c: "НЛП", f: "2023. NLP-Практик - удостоверение.pdf" },
@@ -214,7 +214,7 @@ window.addEventListener('error', function () {
     { y: 2023, t: "Профайлинг", c: "Профайлинг", f: "2023. Профайлинг.pdf" },
     { y: 2023, t: "Психолог-Консультант", c: "Психотерапия", f: "2023. Психолог-Консультант.pdf" },
     { y: 2023, t: "Стратегии ведения переговоров", c: "Переговоры", f: "2023. Стратегии ведения переговоров.pdf" },
-    { y: 2023, t: "Терапия Нового решения в Транзактном анализе", c: "Психотерапия", f: "2023. Терапия Нового решения в Транзактном анализе.PDF" },
+    { y: 2023, t: "Терапия Нового решения в Транзактном Анализе", c: "Психотерапия", f: "2023. Терапия Нового решения в Транзактном анализе.PDF" },
     { y: 2023, t: "Тренер PCM", c: "Коучинг", f: "2023. Тренер PCM.pdf" },
     { y: 2023, t: "Тренер по переговорам", c: "Переговоры", f: "2023. Тренер по переговорам.pdf" },
     { y: 2023, t: "Формирование и развитие патологического симбиоза", c: "Психотерапия", f: "2023. Формирование и развитие патологического симбиоза.pdf" },
@@ -260,24 +260,12 @@ window.addEventListener('error', function () {
 
   const grid = $("#credGrid");
   const filtersBox = $("[data-cred-filters]");
+  const moreBtn = $("#credMore");
   if (grid) {
-    const cats = ["Все", ...[...new Set(CERTS.map(c => c.c))]];
-    // build filters
-    cats.forEach((cat, i) => {
-      const b = document.createElement("button");
-      b.className = "cred-filter" + (i === 0 ? " active" : "");
-      b.textContent = cat;
-      b.dataset.cat = cat;
-      b.addEventListener("click", () => {
-        $$(".cred-filter").forEach(x => x.classList.remove("active"));
-        b.classList.add("active");
-        $$(".cred").forEach(card => {
-          const show = cat === "Все" || card.dataset.cat === cat;
-          card.classList.toggle("hide", !show);
-        });
-      });
-      filtersBox.appendChild(b);
-    });
+    const LIMIT = 9;
+    let activeCat = "Все";
+    let collapsed = true;
+
     // build cards
     CERTS.forEach(c => {
       const a = document.createElement("a");
@@ -295,5 +283,54 @@ window.addEventListener('error', function () {
          </span>`;
       grid.appendChild(a);
     });
+    const cards = $$(".cred", grid);
+
+    function apply() {
+      let count = 0;
+      cards.forEach(card => {
+        const match = activeCat === "Все" || card.dataset.cat === activeCat;
+        let show = false;
+        if (match) {
+          show = collapsed ? count < LIMIT : true;
+          count++;
+        }
+        card.classList.toggle("hide", !show);
+      });
+      if (moreBtn) {
+        if (count > LIMIT) {
+          moreBtn.hidden = false;
+          moreBtn.textContent = collapsed ? `Показать все (${count})` : "Свернуть";
+        } else {
+          moreBtn.hidden = true;
+        }
+      }
+    }
+
+    // build filters
+    const cats = ["Все", ...[...new Set(CERTS.map(c => c.c))]];
+    cats.forEach((cat, i) => {
+      const b = document.createElement("button");
+      b.className = "cred-filter" + (i === 0 ? " active" : "");
+      b.textContent = cat;
+      b.dataset.cat = cat;
+      b.addEventListener("click", () => {
+        $$(".cred-filter").forEach(x => x.classList.remove("active"));
+        b.classList.add("active");
+        activeCat = cat;
+        collapsed = true;
+        apply();
+      });
+      filtersBox.appendChild(b);
+    });
+
+    if (moreBtn) {
+      moreBtn.addEventListener("click", () => {
+        collapsed = !collapsed;
+        apply();
+        if (collapsed) document.getElementById("credentials").scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+
+    apply();
   }
 })();
