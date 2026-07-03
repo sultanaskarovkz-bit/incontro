@@ -173,7 +173,7 @@ window.addEventListener('error', function () {
   /* ---- Credentials data ---- */
   const CERTS = [
     { y: 2026, t: "Гештальт II Ступень - Сертификат 1", c: "Психотерапия", f: "2026. Гештальт II Ступень - Сертификат 1.pdf" },
-    { y: 2026, t: "Транзактный Анализ в клинической практике", c: "Психотерапия", f: "2026. Транзактный Анализ в клинической практике.pdf" },
+    { y: 2026, t: "Транзактный Анализ в клинической практике", c: "Психиатрия", f: "2026. Транзактный Анализ в клинической практике.pdf" },
     { y: 2025, t: "NLP-t", c: "НЛП", f: "2025. NLP-t.pdf" },
     { y: 2025, t: "Гештальт I Ступень - Сертификат", c: "Психотерапия", f: "2025. Гештальт I Ступень - Сертификат.pdf" },
     { y: 2025, t: "Групповая психотерапия - Ирвин Ялом", c: "Психотерапия", f: "2025. Групповая психотерапия - Ирвин Ялом.pdf" },
@@ -307,7 +307,10 @@ window.addEventListener('error', function () {
     }
 
     // build filters
-    const cats = ["Все", ...[...new Set(CERTS.map(c => c.c))]];
+    const ORDER = ["Образование", "Психотерапия", "Психиатрия", "НЛП", "Сексология", "Коучинг", "Переговоры", "Профайлинг", "Влияние", "Риторика"];
+    const present = [...new Set(CERTS.map(c => c.c))];
+    const ordered = ORDER.filter(c => present.includes(c)).concat(present.filter(c => !ORDER.includes(c)));
+    const cats = ["Все", ...ordered];
     cats.forEach((cat, i) => {
       const b = document.createElement("button");
       b.className = "cred-filter" + (i === 0 ? " active" : "");
@@ -321,6 +324,11 @@ window.addEventListener('error', function () {
         apply();
       });
       filtersBox.appendChild(b);
+      if (i === 0) {
+        const brk = document.createElement("span");
+        brk.className = "cred-filter__break";
+        filtersBox.appendChild(brk);
+      }
     });
 
     if (moreBtn) {
