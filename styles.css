@@ -164,7 +164,7 @@ h1,h2,h3,h4,.brand__mark,.preloader__mark{font-family:"Cormorant Garamond",Georg
 
 /* ===================== Stats ===================== */
 .stats{background:var(--bg);padding:clamp(50px,7vw,80px) 0;border-bottom:1px solid var(--line-d)}
-.stats__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;text-align:center}
+.stats__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center}
 .stat__num{font-family:"Cormorant Garamond";font-size:clamp(46px,6vw,70px);font-weight:600;color:#e7cf92;line-height:1;text-shadow:0 2px 24px rgba(198,161,91,.25)}
 .stat__suf{font-family:"Cormorant Garamond";font-size:clamp(30px,4vw,44px);color:#e7cf92}
 .stat p{margin-top:10px;font-size:15.5px;color:#dcd6ca;font-weight:500;letter-spacing:.2px}
@@ -361,7 +361,7 @@ h1,h2,h3,h4,.brand__mark,.preloader__mark{font-family:"Cormorant Garamond",Georg
   .ctaband__media{display:flex;justify-content:center;order:2;min-height:0}
   .about__media img{position:static;height:auto;aspect-ratio:3/4}
   .ctaband__media img{position:static;height:auto;aspect-ratio:3/4;max-width:360px}
-  .stats__grid{grid-template-columns:repeat(3,1fr);gap:24px 16px}
+  .stats__grid{grid-template-columns:repeat(2,1fr);gap:28px 16px}
   .ab{grid-template-columns:1fr}
   .ab__arrow{transform:rotate(90deg);margin:0 auto;height:50px}
   .prog__list{grid-template-columns:1fr}
@@ -371,7 +371,7 @@ h1,h2,h3,h4,.brand__mark,.preloader__mark{font-family:"Cormorant Garamond",Georg
 }
 @media (max-width:520px){
   .pains__grid,.dir__grid,.approach__grid,.cred__grid,.approach__media{grid-template-columns:1fr}
-  .stats__grid{grid-template-columns:repeat(3,1fr);gap:14px 8px}
+  .stats__grid{grid-template-columns:repeat(2,1fr);gap:20px 10px}
   .about__edu{grid-template-columns:1fr}
   .footer__grid{grid-template-columns:1fr}
   .hero__photo{border-radius:18px}
@@ -451,7 +451,7 @@ h1,h2,h3,h4,.brand__mark,.preloader__mark{font-family:"Cormorant Garamond",Georg
 .ig__intro .section__title{text-align:left}
 .ig__follow{flex-shrink:0}
 .ig__ic{width:20px;height:20px}
-.ig__grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.ig__grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
 .ig__cell{position:relative;display:block;aspect-ratio:1;border-radius:14px;overflow:hidden;
   border:1px solid var(--line-l);background:#ddd}
 .ig__cell img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .6s var(--ease)}
@@ -496,7 +496,8 @@ h1,h2,h3,h4,.brand__mark,.preloader__mark{font-family:"Cormorant Garamond",Georg
 .seal-laurel ellipse{fill:var(--gold-2);opacity:.85}
 .seal-t1{fill:var(--gold-2);font-family:"Manrope",sans-serif;font-size:9.5px;font-weight:700;letter-spacing:2px}
 .seal-star{fill:var(--gold);font-size:11px}
-.seal-year{fill:var(--gold-2);font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:600}
+.seal-year{fill:var(--gold-2);font-family:"Cormorant Garamond",serif;font-size:21px;font-weight:600;letter-spacing:1px}
+.seal-div{stroke:var(--gold);stroke-width:.8;opacity:.55}
 
 /* ---- Mini gallery (masonry) ---- */
 .gallery__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
