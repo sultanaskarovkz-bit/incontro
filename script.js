@@ -299,7 +299,7 @@ window.addEventListener('error', function () {
       if (moreBtn) {
         if (count > LIMIT) {
           moreBtn.hidden = false;
-          moreBtn.textContent = collapsed ? `Показать все (${count})` : "Свернуть";
+          moreBtn.textContent = collapsed ? "Показать все" : "Свернуть";
         } else {
           moreBtn.hidden = true;
         }
