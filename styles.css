@@ -236,6 +236,9 @@ h1,h2,h3,h4,.brand__mark,.preloader__mark{font-family:"Cormorant Garamond",Georg
 .prog:hover{background:var(--bg-3);transform:translateX(6px)}
 .prog h3{font-size:24px}
 .prog p{color:var(--muted-d);font-size:15.5px}
+.prog--link{cursor:pointer}
+.prog__more{margin-top:6px;color:var(--gold-2);font-size:13.5px;font-weight:600;letter-spacing:.4px;transition:color .3s var(--ease)}
+.prog--link:hover .prog__more{color:var(--gold)}
 
 /* ===================== Pricing ===================== */
 .price__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
