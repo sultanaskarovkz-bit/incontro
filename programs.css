@@ -1,6 +1,30 @@
 /* ===================== Program pages ===================== */
 /* Uses tokens & base components from styles.css */
 
+/* Even, aesthetic text wrapping */
+.pp-hero__title,.pp-h2,.pp-final__title,.pp-author__name,.pp-mod__ttl{text-wrap:balance}
+.pp-hero__sub,.pp-lead,.pp-card p,.pp-final__sub,.pp-key p,.pp-fmt p{text-wrap:pretty}
+
+/* Reusable image components */
+.pp-imgband{border-radius:var(--r);overflow:hidden;border:1px solid var(--line-d)}
+.pp-imgband img{width:100%;height:100%;object-fit:cover;object-position:center 28%;aspect-ratio:16/7}
+.pp-imgrow{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pp-imgrow--2{grid-template-columns:1fr 1fr}
+.pp-imgrow figure{border-radius:var(--r);overflow:hidden;border:1px solid var(--line-d)}
+.pp-imgrow img{width:100%;height:100%;object-fit:cover;object-position:top center;aspect-ratio:4/5}
+.pp-split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,56px);align-items:center}
+.pp-split__media{border-radius:var(--r);overflow:hidden;border:1px solid var(--line-d)}
+.pp-split__media img{width:100%;height:100%;object-fit:cover;object-position:top center;aspect-ratio:4/5}
+.pp-hero--split .pp-hero__wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,60px);align-items:center}
+.pp-hero__media{border-radius:var(--r);overflow:hidden;border:1px solid var(--line-d);box-shadow:var(--shadow)}
+.pp-hero__media img{width:100%;height:100%;object-fit:cover;object-position:top center;aspect-ratio:4/5}
+@media(max-width:860px){
+  .pp-hero--split .pp-hero__wrap{grid-template-columns:1fr}
+  .pp-hero__media{max-width:420px;margin-top:10px}
+  .pp-split{grid-template-columns:1fr}
+}
+@media(max-width:720px){.pp-imgrow{grid-template-columns:1fr 1fr;gap:12px}}
+
 .pp-back{display:flex;width:max-content;align-items:center;gap:.5em;color:var(--muted-d);font-size:14px;font-weight:600;letter-spacing:.3px;transition:color .3s var(--ease)}
 .pp-back:hover{color:var(--gold-2)}
 .pp-back svg{width:16px;height:16px}
