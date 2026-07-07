@@ -137,6 +137,8 @@
 .pp-author__name{font-size:clamp(30px,4vw,44px);margin-bottom:8px}
 .pp-author__role{color:var(--gold-2);font-weight:500;margin-bottom:20px}
 .pp-author p{color:var(--muted-d);margin:14px 0}
+.pp-sec--light .pp-author p{color:var(--ink-2)}
+.pp-sec--light .pp-author__role{color:var(--gold-d)}
 
 /* Format list */
 .pp-format{margin-top:44px;display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
