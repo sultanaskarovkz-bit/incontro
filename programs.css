@@ -10,6 +10,9 @@
 .pp-imgband img{width:100%;height:100%;object-fit:cover;object-position:center 28%;aspect-ratio:16/7}
 .pp-imgrow{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .pp-imgrow--2{grid-template-columns:1fr 1fr}
+.pp-imgrow--4{grid-template-columns:repeat(4,1fr)}
+.pp-price-alt{font-size:14px;color:var(--muted-l);margin-top:2px}
+.price--feat .pp-price-alt{color:var(--muted-d)}
 .pp-imgrow figure{border-radius:var(--r);overflow:hidden;border:1px solid var(--line-d)}
 .pp-imgrow img{width:100%;height:100%;object-fit:cover;object-position:top center;aspect-ratio:4/5}
 .pp-split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,56px);align-items:center}
