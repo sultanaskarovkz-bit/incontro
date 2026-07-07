@@ -51,7 +51,7 @@
 .pp-sec{padding:clamp(64px,9vw,110px) 0}
 .pp-sec--light{background:var(--cream);color:var(--ink)}
 .pp-sec--light .pp-lead,.pp-sec--light .pp-h2{color:var(--ink)}
-.pp-h2{font-size:clamp(28px,4.4vw,46px);letter-spacing:.3px;max-width:20ch}
+.pp-h2{font-size:clamp(25px,3.6vw,40px);letter-spacing:.3px;max-width:none}
 .pp-sec--center{text-align:center}
 /* Center full-width section headers (author/split headers are nested, so unaffected) */
 .pp-sec>.container>.pp-kicker,
